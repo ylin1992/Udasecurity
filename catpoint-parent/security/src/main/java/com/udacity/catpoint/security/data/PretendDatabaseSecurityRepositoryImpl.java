@@ -27,6 +27,7 @@ public class PretendDatabaseSecurityRepositoryImpl implements SecurityRepository
     private static final Preferences prefs = Preferences.userNodeForPackage(PretendDatabaseSecurityRepositoryImpl.class);
     private static final Gson gson = new Gson(); //used to serialize objects into JSON
 
+
     public PretendDatabaseSecurityRepositoryImpl() {
         //load system state from prefs, or else default
         alarmStatus = AlarmStatus.valueOf(prefs.get(ALARM_STATUS, AlarmStatus.NO_ALARM.toString()));
@@ -42,6 +43,8 @@ public class PretendDatabaseSecurityRepositoryImpl implements SecurityRepository
             }.getType();
             sensors = gson.fromJson(sensorString, type);
         }
+
+
     }
 
     @Override

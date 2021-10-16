@@ -9,6 +9,7 @@ com/udacity/catpoint/security/data/SecurityRepository.class
 com/udacity/catpoint/security/data/Sensor.class
 com/udacity/catpoint/security/data/PretendDatabaseSecurityRepositoryImpl$1.class
 com/udacity/catpoint/security/application/StatusListener.class
+module-info.class
 com/udacity/catpoint/security/application/DisplayPanel.class
 com/udacity/catpoint/security/data/AlarmStatus.class
 com/udacity/catpoint/security/data/ArmingStatus.class
