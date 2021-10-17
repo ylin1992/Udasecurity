@@ -1,7 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.udacity.catpoint.security.service.SecurityServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.028 s <<< FAILURE! - in com.udacity.catpoint.security.service.SecurityServiceTest
-com.udacity.catpoint.security.service.SecurityServiceTest.alarmIsArmedAndSensorIsActivated_putSystemIntoPending  Time elapsed: 0.005 s  <<< ERROR!
-java.lang.reflect.InaccessibleObjectException: Unable to make com.udacity.catpoint.security.service.SecurityServiceTest() accessible: module com.udacity.catpoint.security does not "opens com.udacity.catpoint.security.service" to unnamed module @6e9175d8
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.022 s <<< FAILURE! - in com.udacity.catpoint.security.service.SecurityServiceTest
+com.udacity.catpoint.security.service.SecurityServiceTest  Time elapsed: 0.022 s  <<< ERROR!
+java.lang.ExceptionInInitializerError
+Caused by: java.lang.NullPointerException: Cannot invoke "org.mockito.internal.configuration.plugins.PluginRegistry.getStackTraceCleanerProvider()" because "org.mockito.internal.configuration.plugins.Plugins.registry" is null
 

@@ -66,7 +66,7 @@
       <recent name="com.udacity.catpoint.security.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SecurityServiceTest">
+  <component name="RunManager" selected="JUnit.SecurityServiceTest.alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -107,6 +107,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SecurityServiceTest.alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="security" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.catpoint.security.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
+      <option name="METHOD_NAME" value="alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SecurityServiceTest.alarmIsArmedAndSensorIsActivated_putSystemIntoPending" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="security" />
       <extension name="coverage">
@@ -133,11 +150,23 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SecurityServiceTest.alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus" />
         <item itemvalue="JUnit.SecurityServiceTest" />
-        <item itemvalue="JUnit.SecurityServiceTest.alarmIsArmedAndSensorIsActivated_putSystemIntoPending" />
         <item itemvalue="Application.CatpointApp" />
+        <item itemvalue="JUnit.SecurityServiceTest.alarmIsArmedAndSensorIsActivated_putSystemIntoPending" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/security/src/test/java/com/udacity/catpoint/security/service/SecurityServiceTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>

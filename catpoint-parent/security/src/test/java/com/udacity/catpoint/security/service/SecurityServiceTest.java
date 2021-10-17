@@ -1,5 +1,6 @@
 package com.udacity.catpoint.security.service;
 
+import com.udacity.catpoint.image.service.FakeImageService;
 import com.udacity.catpoint.image.service.ImageService;
 import com.udacity.catpoint.security.data.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,25 +16,26 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class SecurityServiceTest {
     private SecurityService securityService;
+    private Sensor sensor;
+    private ImageService imageService;
 
     @Mock
     private SecurityRepository securityRepository;
 
-    @Mock
-    private ImageService fakeImageService;
 
     @BeforeEach
     void init() {
-        securityService = new SecurityService(securityRepository, fakeImageService);
+        imageService = new FakeImageService();
+        securityService = new SecurityService(securityRepository, imageService);
+        // for details, see Sensor's constructor
+        sensor = new Sensor(UUID.randomUUID().toString(), SensorType.WINDOW);
     }
 
     // Test 1
     @Test
     void alarmIsArmedAndSensorIsActivated_putSystemIntoPending() {
-        // for details, see Sensor's constructor
-        Sensor sensor = new Sensor(UUID.randomUUID().toString(), SensorType.DOOR);
 
-        // force to go to NO_ALARM case in handleSensorActivated()
+        // force it to go to NO_ALARM case in handleSensorActivated()
         when(securityRepository.getAlarmStatus()).thenReturn(AlarmStatus.NO_ALARM);
         when(securityRepository.getArmingStatus()).thenReturn(ArmingStatus.ARMED_AWAY);
 
@@ -41,4 +43,13 @@ class SecurityServiceTest {
         verify(securityService, times(1)).setAlarmStatus(AlarmStatus.PENDING_ALARM);
     }
 
+    @Test
+    void alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus() {
+
+        when(securityRepository.getArmingStatus()).thenReturn(ArmingStatus.ARMED_AWAY);
+        when(securityRepository.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
+
+        securityService.changeSensorActivationStatus(sensor, true);
+        verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.ALARM);
+    }
 }
