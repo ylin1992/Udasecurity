@@ -111,10 +111,15 @@ public class SecurityService {
      * @param active
      */
     public void changeSensorActivationStatus(Sensor sensor, Boolean active) {
-        if (!sensor.getActive() && active) {
-            handleSensorActivated();
-        } else if (sensor.getActive() && !active) {
-            handleSensorDeactivated();
+        // reference: https://knowledge.udacity.com/questions/627654
+        // The logic hasn't to be checked when alarm is active
+        // Modify the logic to meet the request for test 6
+        if (securityRepository.getAlarmStatus() != AlarmStatus.ALARM) {
+            if (active) {
+                handleSensorActivated();
+            } else if (sensor.getActive()) {
+                handleSensorDeactivated();
+            }
         }
         sensor.setActive(active);
         securityRepository.updateSensor(sensor);

@@ -66,7 +66,7 @@
       <recent name="com.udacity.catpoint.security.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SecurityServiceTest.alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus">
+  <component name="RunManager" selected="Maven.catpoint-parent [test]">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -148,8 +148,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="catpoint-parent [test]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="test" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Maven.catpoint-parent [test]" />
         <item itemvalue="JUnit.SecurityServiceTest.alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus" />
         <item itemvalue="JUnit.SecurityServiceTest" />
         <item itemvalue="Application.CatpointApp" />

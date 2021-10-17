@@ -13,6 +13,14 @@
         <module>security</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>no.tornado</groupId>
+            <artifactId>tornadofx-android-compat</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+    </dependencies>
+
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
