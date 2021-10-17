@@ -9,19 +9,33 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class SecurityServiceTest {
-    private SecurityService securityService;
+
     private Sensor sensor;
-    private ImageService imageService;
+
+    private Set<Sensor> genSensorList() {
+        Set<Sensor> sensors = new HashSet<>();
+        sensors.add(new Sensor(UUID.randomUUID().toString(), SensorType.WINDOW));
+        sensors.add(new Sensor(UUID.randomUUID().toString(), SensorType.DOOR));
+        sensors.add(new Sensor(UUID.randomUUID().toString(), SensorType.MOTION));
+        return sensors;
+    }
 
     @Mock
     private SecurityRepository securityRepository;
 
+    @Mock
+    private SecurityService securityService;
+
+    @Mock
+    private ImageService imageService;
 
     @BeforeEach
     void init() {
@@ -43,13 +57,15 @@ class SecurityServiceTest {
         verify(securityService, times(1)).setAlarmStatus(AlarmStatus.PENDING_ALARM);
     }
 
-    @Test
-    void alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus() {
-
-        when(securityRepository.getArmingStatus()).thenReturn(ArmingStatus.ARMED_AWAY);
-        when(securityRepository.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
-
-        securityService.changeSensorActivationStatus(sensor, true);
-        verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.ALARM);
-    }
+    // Test 2
+    //@Test
+    //void alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus() {
+    //
+    //    when(securityRepository.getArmingStatus()).thenReturn(ArmingStatus.ARMED_AWAY);
+    //    when(securityRepository.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
+    //
+    //    securityService.changeSensorActivationStatus(sensor, true);
+    //    verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.ALARM);
+    //}
+    //
 }
