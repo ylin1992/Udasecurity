@@ -183,7 +183,7 @@
     <SUITE FILE_PATH="coverage/catpoint_parent$SecurityServiceTest_sensorIsActivatedWhileAlarmIsOn_changeToPendingState.ic" NAME="SecurityServiceTest.sensorIsActivatedWhileAlarmIsOn_changeToPendingState Coverage Results" MODIFIED="1634544264275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.udacity.catpoint.security.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/catpoint_parent$SecurityServiceTest.ic" NAME="SecurityServiceTest Coverage Results" MODIFIED="1634565735642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/catpoint_parent$SecurityServiceTest.ic" NAME="SecurityServiceTest Coverage Results" MODIFIED="1634566299400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.udacity.catpoint.security.service.*</FILTER>
     </SUITE>
   </component>
