@@ -137,13 +137,7 @@ class SecurityServiceTest {
         when(imageService.imageContainsCat(any(), anyFloat())).thenReturn(false);
         sensor.setActive(active);
         securityService.processImage(new BufferedImage(1, 1, BufferedImage.TYPE_INT_BGR));
-        // below codes don't work since setAlarmStatus() is used in catDetected(),
-        // which can lead to failure since we never want it to be called, but at least one will be called
-//        if (!active) {
-//            verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.NO_ALARM);
-//        } else {
-//            verify(securityRepository, never()).setAlarmStatus(AlarmStatus.NO_ALARM);
-//        }
+
         verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.NO_ALARM);
     }
 
@@ -183,5 +177,16 @@ class SecurityServiceTest {
         verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.ALARM);
         //Assertions.assertEquals(AlarmStatus.ALARM, securityService.getAlarmStatus());
     }
-    
+
+
+    // additional test for Test 8
+    @Test
+    void systemIsAlarmSensorIsArmedCatIsDetected_imageDoesNotContainCat_systemKeepsAlarmState() {
+        when(imageService.imageContainsCat(any(), anyFloat())).thenReturn(false);
+        when(securityRepository.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
+        when(securityRepository.getSensorsState()).thenReturn(true);
+
+        securityService.processImage(new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB));
+        verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.ALARM);
+    }
 }

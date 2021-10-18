@@ -22,5 +22,5 @@ public interface SecurityRepository {
 
     ArmingStatus getArmingStatus();
 
-
+    public boolean getSensorsState();
 }

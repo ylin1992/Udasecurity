@@ -92,4 +92,18 @@ public class PretendDatabaseSecurityRepositoryImpl implements SecurityRepository
     public ArmingStatus getArmingStatus() {
         return armingStatus;
     }
+
+    /**
+     * @return true if at least one sensor is active
+     */
+    @Override
+    public boolean getSensorsState() {
+        for (Sensor sensor : getSensors()) {
+            if (sensor.getActive()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

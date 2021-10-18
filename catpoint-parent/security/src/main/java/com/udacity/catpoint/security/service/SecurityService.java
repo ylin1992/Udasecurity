@@ -66,6 +66,8 @@ public class SecurityService {
     private void catDetected(Boolean cat) {
         if (cat && getArmingStatus() == ArmingStatus.ARMED_HOME) {
             setAlarmStatus(AlarmStatus.ALARM);
+        } else if (!cat && getSensorsState()) {
+            setAlarmStatus(AlarmStatus.ALARM);
         } else {
             setAlarmStatus(AlarmStatus.NO_ALARM);
         }
@@ -129,7 +131,6 @@ public class SecurityService {
      * @param active
      */
     public void changeSensorActivationStatus(Sensor sensor, Boolean active) {
-        // reference: https://knowledge.udacity.com/questions/627654
         // The logic hasn't to be checked when alarm is active
         // Modify the logic to meet the request for test 6
         if (securityRepository.getAlarmStatus() != AlarmStatus.ALARM) {
@@ -175,5 +176,12 @@ public class SecurityService {
 
     public ArmingStatus getArmingStatus() {
         return securityRepository.getArmingStatus();
+    }
+
+    /**
+     * @return true if at least one sensor is active
+     */
+    public boolean getSensorsState() {
+        return securityRepository.getSensorsState();
     }
 }
