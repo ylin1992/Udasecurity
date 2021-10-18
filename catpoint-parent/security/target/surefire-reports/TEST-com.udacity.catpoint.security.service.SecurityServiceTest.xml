@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.udacity.catpoint.security.service.SecurityServiceTest" time="1.71" tests="16" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.udacity.catpoint.security.service.SecurityServiceTest" time="1.809" tests="16" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TW"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/ewan/Projects/Java/Udasecurity/catpoint-parent/security/target/surefire 2021-10-18T16-32-08_547-jvmRun1 surefire13257959298910817666tmp surefire_02908519267081028082tmp"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/ewan/Projects/Java/Udasecurity/catpoint-parent/security/target/surefire 2021-10-18T17-15-44_084-jvmRun1 surefire9609676325238719842tmp surefire_08418809742677632972tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/ewan/Projects/Java/Udasecurity/catpoint-parent/security/target/test-classes:/Users/ewan/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/ewan/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/ewan/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/ewan/.m2/repository/org/checkerframework/checker-qual/3.12.0/checker-qual-3.12.0.jar:/Users/ewan/.m2/repository/com/google/errorprone/error_prone_annotations/2.7.1/error_prone_annotations-2.7.1.jar:/Users/ewan/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/annotations/2.17.60/annotations-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/utils/2.17.60/utils-2.17.60.jar:/Users/ewan/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/profiles/2.17.60/profiles-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/http-client-spi/2.17.60/http-client-spi-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/json-utils/2.17.60/json-utils-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/third-party-jackson-core/2.17.60/third-party-jackson-core-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/aws-json-protocol/2.17.60/aws-json-protocol-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/protocol-core/2.17.60/protocol-core-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/aws-core/2.17.60/aws-core-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/metrics-spi/2.17.60/metrics-spi-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/apache-client/2.17.60/apache-client-2.17.60.jar:/Users/ewan/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/ewan/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/ewan/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/ewan/.m2/repository/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/netty-nio-client/2.17.60/netty-nio-client-2.17.60.jar:/Users/ewan/.m2/repository/io/netty/netty-codec-http/4.1.68.Final/netty-codec-http-4.1.68.Final.jar:/Users/ewan/.m2/repository/io/netty/netty-codec-http2/4.1.68.Final/netty-codec-http2-4.1.68.Final.jar:/Users/ewan/.m2/repository/io/netty/netty-codec/4.1.68.Final/netty-codec-4.1.68.Final.jar:/Users/ewan/.m2/repository/io/netty/netty-transport/4.1.68.Final/netty-transport-4.1.68.Final.jar:/Users/ewan/.m2/repository/io/netty/netty-resolver/4.1.68.Final/netty-resolver-4.1.68.Final.jar:/Users/ewan/.m2/repository/io/netty/netty-common/4.1.68.Final/netty-common-4.1.68.Final.jar:/Users/ewan/.m2/repository/io/netty/netty-buffer/4.1.68.Final/netty-buffer-4.1.68.Final.jar:/Users/ewan/.m2/repository/io/netty/netty-handler/4.1.68.Final/netty-handler-4.1.68.Final.jar:/Users/ewan/.m2/repository/io/netty/netty-transport-native-epoll/4.1.68.Final/netty-transport-native-epoll-4.1.68.Final-linux-x86_64.jar:/Users/ewan/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.68.Final/netty-transport-native-unix-common-4.1.68.Final.jar:/Users/ewan/.m2/repository/com/typesafe/netty/netty-reactive-streams-http/2.0.5/netty-reactive-streams-http-2.0.5.jar:/Users/ewan/.m2/repository/com/typesafe/netty/netty-reactive-streams/2.0.5/netty-reactive-streams-2.0.5.jar:/Users/ewan/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/Users/ewan/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/ewan/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/Users/ewan/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ewan/.m2/repository/org/mockito/mockito-junit-jupiter/4.0.0/mockito-junit-jupiter-4.0.0.jar:/Users/ewan/.m2/repository/org/mockito/mockito-core/4.0.0/mockito-core-4.0.0.jar:/Users/ewan/.m2/repository/net/bytebuddy/byte-buddy/1.11.19/byte-buddy-1.11.19.jar:/Users/ewan/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.19/byte-buddy-agent-1.11.19.jar:/Users/ewan/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/Users/ewan/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar:/Users/ewan/.m2/repository/org/mockito/mockito-inline/3.11.2/mockito-inline-3.11.2.jar:/Users/ewan/.m2/repository/no/tornado/tornadofx-android-compat/1.0.1/tornadofx-android-compat-1.0.1.jar:"/>
@@ -22,7 +22,7 @@
     <property name="user.home" value="/Users/ewan"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="jdk.module.path" value="/Users/ewan/Projects/Java/Udasecurity/catpoint-parent/security/target/classes:/Users/ewan/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/ewan/.m2/repository/com/miglayout/miglayout/3.7.4/miglayout-3.7.4.jar:/Users/ewan/.m2/repository/com/google/guava/guava/31.0-jre/guava-31.0-jre.jar:/Users/ewan/.m2/repository/com/google/code/gson/gson/2.8.8/gson-2.8.8.jar:/Users/ewan/Projects/Java/Udasecurity/catpoint-parent/image/target/image-1.0-SNAPSHOT.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/auth/2.17.60/auth-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/sdk-core/2.17.60/sdk-core-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/regions/2.17.60/regions-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/rekognition/2.17.60/rekognition-2.17.60.jar"/>
+    <property name="jdk.module.path" value="/Users/ewan/Projects/Java/Udasecurity/catpoint-parent/security/target/classes:/Users/ewan/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/ewan/.m2/repository/com/miglayout/miglayout/3.7.4/miglayout-3.7.4.jar:/Users/ewan/.m2/repository/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/Users/ewan/.m2/repository/com/google/code/gson/gson/2.8.8/gson-2.8.8.jar:/Users/ewan/Projects/Java/Udasecurity/catpoint-parent/image/target/image-1.0-SNAPSHOT.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/auth/2.17.60/auth-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/sdk-core/2.17.60/sdk-core-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/regions/2.17.60/regions-2.17.60.jar:/Users/ewan/.m2/repository/software/amazon/awssdk/rekognition/2.17.60/rekognition-2.17.60.jar"/>
     <property name="java.version.date" value="2020-10-20"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home"/>
     <property name="file.separator" value="/"/>
@@ -57,36 +57,36 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="sensorIsActivatedAndSystemIsPending_changeToAlarmState" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="1.437"/>
-  <testcase name="alarmIsArmedAndSensorIsActivated_putSystemIntoPending" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.009"/>
-  <testcase name="alarmIsActive_changeInSensorStateDoesNotAffectAlarmState(boolean)[1]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.041"/>
+  <testcase name="sensorIsActivatedAndSystemIsPending_changeToAlarmState" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="1.533"/>
+  <testcase name="alarmIsArmedAndSensorIsActivated_putSystemIntoPending" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.01"/>
+  <testcase name="alarmIsActive_changeInSensorStateDoesNotAffectAlarmState(boolean)[1]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.039"/>
   <testcase name="alarmIsActive_changeInSensorStateDoesNotAffectAlarmState(boolean)[2]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.008"/>
-  <testcase name="alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.007"/>
-  <testcase name="systemIsArmed_resetAllSensorsToInactive(ArmingStatus)[1]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.018"/>
-  <testcase name="systemIsArmed_resetAllSensorsToInactive(ArmingStatus)[2]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.009"/>
-  <testcase name="systemIsArmedHomeWhileCameraShowsCat_setAlarmToAlarm" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.015">
+  <testcase name="alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.006"/>
+  <testcase name="systemIsArmed_resetAllSensorsToInactive(ArmingStatus)[1]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.017"/>
+  <testcase name="systemIsArmed_resetAllSensorsToInactive(ArmingStatus)[2]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.011"/>
+  <testcase name="systemIsArmedHomeWhileCameraShowsCat_setAlarmToAlarm" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.018">
     <system-out><![CDATA[=> Debug: processImage: 
 null
 DISARMED
 ]]></system-out>
   </testcase>
-  <testcase name="imageServiceFindsACatWhenSystemIsArmedHome_putSystemIntoAlarm" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.006">
+  <testcase name="imageServiceFindsACatWhenSystemIsArmedHome_putSystemIntoAlarm" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.011">
     <system-out><![CDATA[=> Debug: processImage: 
 null
 ARMED_HOME
 ]]></system-out>
   </testcase>
-  <testcase name="sensorIsDeactivatedWhileInactive_noChangeInAlarmState(AlarmStatus)[1]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.006"/>
-  <testcase name="sensorIsDeactivatedWhileInactive_noChangeInAlarmState(AlarmStatus)[2]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.006"/>
-  <testcase name="sensorIsDeactivatedWhileInactive_noChangeInAlarmState(AlarmStatus)[3]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.005"/>
-  <testcase name="systemIsDisArmed_setStatusToNoAlarm" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.005"/>
+  <testcase name="sensorIsDeactivatedWhileInactive_noChangeInAlarmState(AlarmStatus)[1]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.007"/>
+  <testcase name="sensorIsDeactivatedWhileInactive_noChangeInAlarmState(AlarmStatus)[2]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.005"/>
+  <testcase name="sensorIsDeactivatedWhileInactive_noChangeInAlarmState(AlarmStatus)[3]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.004"/>
+  <testcase name="systemIsDisArmed_setStatusToNoAlarm" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.004"/>
   <testcase name="imageServiceIdentifiesAnImageButNotACat_changeStatusToNoAlarmIfTheSensorsAreNotActive(boolean)[1]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.006">
     <system-out><![CDATA[=> Debug: processImage: 
 null
 null
 ]]></system-out>
   </testcase>
-  <testcase name="imageServiceIdentifiesAnImageButNotACat_changeStatusToNoAlarmIfTheSensorsAreNotActive(boolean)[2]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.005">
+  <testcase name="imageServiceIdentifiesAnImageButNotACat_changeStatusToNoAlarmIfTheSensorsAreNotActive(boolean)[2]" classname="com.udacity.catpoint.security.service.SecurityServiceTest" time="0.006">
     <system-out><![CDATA[=> Debug: processImage: 
 null
 null
