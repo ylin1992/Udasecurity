@@ -37,6 +37,7 @@ public class DisplayPanel extends JPanel implements StatusListener {
 
     @Override
     public void notify(AlarmStatus status) {
+        System.out.println("Debug => Current System status: " + status);
         currentStatusLabel.setText(status.getDescription());
         currentStatusLabel.setBackground(status.getColor());
         currentStatusLabel.setOpaque(true);

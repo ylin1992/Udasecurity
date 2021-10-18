@@ -46,7 +46,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -66,7 +66,7 @@
       <recent name="com.udacity.catpoint.security.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.catpoint-parent [test]">
+  <component name="RunManager" selected="JUnit.SecurityServiceTest">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -107,7 +107,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.alarmIsActive_changeInSensorStateDoesNotAffectAlarmState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="security" />
       <extension name="coverage">
         <pattern>
@@ -117,14 +117,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus" />
+      <option name="METHOD_NAME" value="alarmIsActive_changeInSensorStateDoesNotAffectAlarmState(boolean)" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.alarmIsArmedAndSensorIsActivated_putSystemIntoPending" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.sensorIsActivatedWhileAlarmIsOn_changeToPendingState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="security" />
       <extension name="coverage">
         <pattern>
@@ -134,7 +134,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="alarmIsArmedAndSensorIsActivated_putSystemIntoPending" />
+      <option name="METHOD_NAME" value="sensorIsActivatedWhileAlarmIsOn_changeToPendingState" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -175,13 +175,24 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Maven.catpoint-parent [test]" />
-        <item itemvalue="JUnit.SecurityServiceTest.alarmIsArmedAndSensorIsActivatedAndSystemIsPending_setAlarmToAlarmStatus" />
         <item itemvalue="JUnit.SecurityServiceTest" />
+        <item itemvalue="JUnit.SecurityServiceTest.alarmIsActive_changeInSensorStateDoesNotAffectAlarmState" />
+        <item itemvalue="JUnit.SecurityServiceTest.sensorIsActivatedWhileAlarmIsOn_changeToPendingState" />
         <item itemvalue="Application.CatpointApp" />
-        <item itemvalue="JUnit.SecurityServiceTest.alarmIsArmedAndSensorIsActivated_putSystemIntoPending" />
+        <item itemvalue="Maven.catpoint-parent [test]" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/catpoint_parent$SecurityServiceTest_alarmIsActive_changeInSensorStateDoesNotAffectAlarmState.ic" NAME="SecurityServiceTest.alarmIsActive_changeInSensorStateDoesNotAffectAlarmState Coverage Results" MODIFIED="1634544730083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.udacity.catpoint.security.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/catpoint_parent$SecurityServiceTest_sensorIsActivatedWhileAlarmIsOn_changeToPendingState.ic" NAME="SecurityServiceTest.sensorIsActivatedWhileAlarmIsOn_changeToPendingState Coverage Results" MODIFIED="1634544264275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.udacity.catpoint.security.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/catpoint_parent$SecurityServiceTest.ic" NAME="SecurityServiceTest Coverage Results" MODIFIED="1634544776680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.udacity.catpoint.security.service.*</FILTER>
+    </SUITE>
+  </component>
 </project>

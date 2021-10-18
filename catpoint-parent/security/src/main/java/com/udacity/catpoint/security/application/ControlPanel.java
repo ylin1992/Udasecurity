@@ -33,8 +33,11 @@ public class ControlPanel extends JPanel {
         buttonMap = Arrays.stream(ArmingStatus.values())
                 .collect(Collectors.toMap(status -> status, status -> new JButton(status.getDescription())));
 
+
         //add an action listener to each button that applies its arming status and recolors all the buttons
         buttonMap.forEach((k, v) -> {
+            v.setContentAreaFilled(true);
+            v.setOpaque(true);
             v.addActionListener(e -> {
                 securityService.setArmingStatus(k);
                 buttonMap.forEach((status, button) -> button.setBackground(status == k ? status.getColor() : null));

@@ -47,7 +47,6 @@ class SecurityServiceTest {
 
     @BeforeEach
     void init() {
-        //imageService = new FakeImageService();
         securityService = new SecurityService(securityRepository, imageService);
         // for details, see Sensor's constructor
         sensor = new Sensor(UUID.randomUUID().toString(), SensorType.WINDOW);
@@ -184,5 +183,5 @@ class SecurityServiceTest {
         verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.ALARM);
         //Assertions.assertEquals(AlarmStatus.ALARM, securityService.getAlarmStatus());
     }
-
+    
 }
