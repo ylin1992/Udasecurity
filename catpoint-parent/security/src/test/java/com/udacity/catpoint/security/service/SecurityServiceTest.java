@@ -2,6 +2,7 @@ package com.udacity.catpoint.security.service;
 
 import com.udacity.catpoint.image.service.ImageService;
 import com.udacity.catpoint.security.data.*;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,11 +24,15 @@ class SecurityServiceTest {
 
     private Sensor sensor;
 
-    private Set<Sensor> genSensorList() {
+    private Set<Sensor> genSensorSet() {
         Set<Sensor> sensors = new HashSet<>();
         sensors.add(new Sensor(UUID.randomUUID().toString(), SensorType.WINDOW));
         sensors.add(new Sensor(UUID.randomUUID().toString(), SensorType.DOOR));
         sensors.add(new Sensor(UUID.randomUUID().toString(), SensorType.MOTION));
+
+        for (Sensor sensor : sensors) {
+            sensor.setActive(true);
+        }
         return sensors;
     }
 
@@ -145,33 +150,39 @@ class SecurityServiceTest {
 
     //
     // Test 9
-    @ParameterizedTest
-    @ValueSource(booleans = {true, false})
-    void systemIsDisArmed_setStatusToNoAlarm(boolean active) {
-        when(securityRepository.getArmingStatus()).thenReturn(ArmingStatus.DISARMED);
-        securityService.changeSensorActivationStatus(sensor, active);
+    @Test
+    void systemIsDisArmed_setStatusToNoAlarm() {
+        securityService.setArmingStatus(ArmingStatus.DISARMED);
         verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.NO_ALARM);
+        verify(securityRepository, never()).setAlarmStatus(AlarmStatus.ALARM);
+        verify(securityRepository, never()).setAlarmStatus(AlarmStatus.PENDING_ALARM);
     }
 
-    //// Test 10
-    //@Test
-    //void systemIsArmed_resetAllSensorsToInactive() {
-    //    when(securityRepository.getArmingStatus()).thenReturn(ArmingStatus.ARMED_AWAY);
-    //    Set<Sensor> sensors = genSensorList();
-    //    for (Sensor sensor : sensors) {
-    //        securityService.changeSensorActivationStatus(sensor, false);
-    //        Assertions.assertTrue(sensor.getActive());
-    //    }
-    //}
-    //
+    // Test 10
+    @ParameterizedTest
+    @EnumSource(value = ArmingStatus.class, names = {"ARMED_AWAY", "ARMED_HOME"})
+    void systemIsArmed_resetAllSensorsToInactive(ArmingStatus armingStatus) {
+        when(securityRepository.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
+        // initialize a list of active sensors
+        Set<Sensor> dummySensors = genSensorSet();
+        when(securityRepository.getSensors()).thenReturn(dummySensors);
+        securityService.setArmingStatus(armingStatus);
+        dummySensors.forEach(s -> {
+            Assertions.assertFalse(s.getActive());
+        });
+    }
+
     //// Test 11
-    //@Test
-    //void systemIsArmedHomeWhileCameraShowsCat_setAlarmToAlarm() {
-    //    when(securityRepository.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
-    //    when(imageService.imageContainsCat(any(), anyFloat())).thenReturn(true);
-    //
-    //    securityService.changeSensorActivationStatus(sensor, true);
-    //    verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.ALARM);
-    //}
+    @Test
+    void systemIsArmedHomeWhileCameraShowsCat_setAlarmToAlarm() {
+        BufferedImage dummyCatImage = new BufferedImage(256, 256, BufferedImage.TYPE_INT_RGB);
+        when(imageService.imageContainsCat(any(), anyFloat())).thenReturn(true);
+        when(securityRepository.getArmingStatus()).thenReturn(ArmingStatus.DISARMED);
+
+        securityService.processImage(dummyCatImage);
+        securityService.setArmingStatus(ArmingStatus.ARMED_HOME);
+        verify(securityRepository, times(1)).setAlarmStatus(AlarmStatus.ALARM);
+        //Assertions.assertEquals(AlarmStatus.ALARM, securityService.getAlarmStatus());
+    }
 
 }

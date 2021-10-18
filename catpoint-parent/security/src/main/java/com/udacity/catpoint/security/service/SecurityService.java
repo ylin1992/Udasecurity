@@ -10,6 +10,7 @@ import com.udacity.catpoint.security.data.Sensor;
 import java.awt.image.BufferedImage;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 /**
  * Service that receives information about changes to the security system. Responsible for
@@ -23,10 +24,13 @@ public class SecurityService {
     private ImageService imageService;
     private SecurityRepository securityRepository;
     private Set<StatusListener> statusListeners = new HashSet<>();
+    private boolean isCatDetected;
+
 
     public SecurityService(SecurityRepository securityRepository, ImageService imageService) {
         this.securityRepository = securityRepository;
         this.imageService = imageService;
+        this.isCatDetected = false;
     }
 
     /**
@@ -38,6 +42,14 @@ public class SecurityService {
     public void setArmingStatus(ArmingStatus armingStatus) {
         if (armingStatus == ArmingStatus.DISARMED) {
             setAlarmStatus(AlarmStatus.NO_ALARM);
+        } else {
+            if (isCatDetected) {
+                setAlarmStatus(AlarmStatus.ALARM);
+            }
+            ConcurrentSkipListSet<Sensor> sensors = new ConcurrentSkipListSet<>(getSensors());
+            sensors.forEach(sensor -> {
+                changeSensorActivationStatus(sensor, false);
+            });
         }
         securityRepository.setArmingStatus(armingStatus);
     }
@@ -132,7 +144,8 @@ public class SecurityService {
      * @param currentCameraImage
      */
     public void processImage(BufferedImage currentCameraImage) {
-        catDetected(imageService.imageContainsCat(currentCameraImage, 50.0f));
+        isCatDetected = imageService.imageContainsCat(currentCameraImage, 50.0f);
+        catDetected(isCatDetected);
     }
 
     public AlarmStatus getAlarmStatus() {
